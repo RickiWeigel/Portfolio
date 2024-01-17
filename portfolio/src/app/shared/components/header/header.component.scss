@@ -1,6 +1,11 @@
 @import "./../../../../styles.scss";
 
 header {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   @include dflex();
   background-color: #141d2fcc;
   margin-left: auto;
@@ -36,9 +41,6 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
-    // border-radius: 3rem;
-    // -webkit-box-shadow: 0px 0px 50px 10px #00bee8;
-    // box-shadow: 0px 0px 50px 10px #00bee8;
     z-index: 1;
     opacity: 0;
     transition: opacity 250ms ease;
