@@ -1,0 +1,57 @@
+@import "./../../styles.scss";
+
+main {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  height: calc(100vh - 80px);
+  overflow: visible;
+}
+
+.background-vector {
+  width: 100vw;
+  position: absolute;
+  top: 28%;
+  left: 0;
+  right: 0;
+  height: 50%;
+}
+
+.character-container {
+  overflow-x: visible;
+  position: relative;
+  top: 5%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 45%;
+  height: 80%;
+  .background-image {
+    position: absolute;
+    width: 650px;
+    z-index: -5;
+  }
+
+  .character-front,
+  .character-back {
+    position: absolute;
+    width: 400px;
+  }
+  .character-back {
+    z-index: -3;
+  }
+  .character-front {
+    z-index: 5;
+  }
+}

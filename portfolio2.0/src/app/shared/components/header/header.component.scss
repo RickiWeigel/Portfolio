@@ -1,0 +1,69 @@
+@import "./../../../../styles.scss";
+
+header {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include dflex();
+  background-color: #141d2fcc;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+}
+
+section {
+  @include dflex($jc: space-between);
+  width: 80vw;
+  max-width: 1920px;
+  padding: 1rem 0;
+  margin: auto 0;
+}
+
+nav {
+  display: flex;
+  position: relative;
+  &:hover {
+    .slider {
+      opacity: 1;
+    }
+  }
+  &.animate {
+    .slider {
+      transition-delay: 100ms;
+      transition: all 300ms ease-in-out;
+    }
+  }
+  .slider {
+    width: 7rem;
+    height: 100%;
+    border-bottom:solid 2px #4B47FF ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 250ms ease;
+  }
+  ul {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    z-index: 3;
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        @include dflex();
+        color: #ffffff;
+        font-size: 1.2rem;
+        cursor: pointer;
+        width: 7rem;
+        &:active,
+        &:focus {
+            color: #00BEE8;
+        }
+      }
+    }
+  }
+}
