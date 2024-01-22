@@ -1,0 +1,19 @@
+.all {
+  display: flex;
+  justify-content: center;
+}
+
+.margin-left,
+.margin-right {
+  flex-grow: 1;
+  background-color: lightgray;
+  height: 100vh;
+}
+
+main {
+  width: 100vw;
+  padding-top: 80px;
+  height: 100vh;
+}
+
+

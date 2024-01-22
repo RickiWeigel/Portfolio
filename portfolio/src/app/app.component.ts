@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./../../src/app/shared/components/header/header.component";
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { AboutMeComponent } from './about-me/about-me.component';
+import { MainContentComponent } from './main-content/main-content.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,HeaderComponent,LandingPageComponent,AboutMeComponent],
+  imports: [CommonModule, RouterOutlet,MainContentComponent,HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

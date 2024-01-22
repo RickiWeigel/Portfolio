@@ -13,7 +13,6 @@
   padding: 0;
   box-sizing: border-box;
   user-select: none;
-  overflow-x: hidden;
 }
 
   @mixin dflex($jc: center, $ai: center, $g: 0px) {
@@ -36,8 +35,6 @@ html {
 
 body {
   color: #fff;
-  margin-left: auto;
-  margin-right: auto;
   background-color: var(--main-bg-color);;
 }
 
@@ -49,4 +46,11 @@ h1{
 
 a{
   color: #fff;
+  text-decoration: none;
+}
+
+section{
+  width: 80vw;
+  max-width: 1920px;
+  margin: 0 auto;
 }
