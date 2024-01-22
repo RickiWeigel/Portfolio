@@ -1,0 +1,59 @@
+@import "./../../../styles.scss";
+
+main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  //   flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  .img-vector {
+    position: absolute;
+    top: 15vh;
+    width: 120%;
+    height: 100vh;
+    z-index: 2;
+  }
+}
+
+.content-container {
+  position: relative;
+  width: 80vw;
+  max-width: 1920px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-me-description {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  max-width: 600px;
+  gap: 35px;
+  text-align: justify;
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+}
+
+.image-box {
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  overflow: visible;
+  @include backgroundImg();
+  img {
+    width: clamp(600px, 60vw, 900px);
+    position: absolute;
+  }
+  .character-back,
+  .character-front {
+    width: clamp(350px, 30vw, 500px);
+  }
+  .character-front {
+    z-index: 3;
+  }
+}
