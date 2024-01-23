@@ -4,9 +4,13 @@
 }
 
 main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   width: 100vw;
   padding-top: 80px;
-  height: 100vh;
+  height: auto;
+  overflow-x: hidden;
 }
 
 
