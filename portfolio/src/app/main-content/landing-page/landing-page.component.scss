@@ -74,7 +74,7 @@ main {
   color: rgba(225, 225, 225, 0.01);
   background-image: url("./../../../assets/img/backgrounds/all-shadows2.png");
   background-repeat: repeat;
-  -webkit-background-clip: text;
+  background-clip: text;
   animation: text-animate 20s ease-in-out infinite;
   text-transform: uppercase;
 }
