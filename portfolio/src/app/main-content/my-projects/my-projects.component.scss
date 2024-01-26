@@ -34,7 +34,7 @@ main {
   }
 }
 
-.project-container {
+.my-projects-container {
   @include dflex();
   flex-direction: column;
   width: 80vw;
