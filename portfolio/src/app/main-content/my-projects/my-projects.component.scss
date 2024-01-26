@@ -1,0 +1,98 @@
+@import "./../../../styles.scss";
+
+main {
+  margin-top: 80px;
+  position: relative;
+  @include dflex($jc: flex-start);
+  flex-direction: column;
+  width: 100vw;
+  height: calc(auto);
+}
+
+.headline {
+  position: relative;
+  width: 100%;
+  @include dflex();
+  align-items: center; // Hinzugefügt, um die Ausrichtung auf das Zentrum zu setzen
+  h2 {
+    margin: 0 32px;
+  }
+  .left-line,
+  .right-line {
+    position: absolute;
+    height: 4px;
+    border-radius: 3px;
+    background-color: var(--sub-text-blue);
+  }
+  .left-line {
+    right: 67%;
+    width: 120px;
+  }
+  .right-line {
+    left: 67%;
+    width: 800px;
+  }
+}
+
+.project-container {
+  @include dflex();
+  flex-direction: column;
+  width: 80vw;
+  max-width: 1920px;
+}
+
+.single-project {
+  width: 100%;
+  @include dflex($jc: space-between);
+  img {
+    width: clamp(350px, 40vw, 390px);
+  }
+  .project-description {
+    @include dflex($jc: flex-start, $g: 1%);
+    flex-direction: column;
+    padding-top: 5%;
+    height: 100%;
+    max-width: 50%;
+    min-width: 270px;
+  }
+  .project-headline {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--sub-text-blue);
+    width: 100%;
+    text-align: center;
+  }
+  .tech-description {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--sub-text-azure);
+    text-align: center;
+    width: 100%;
+  }
+  .description {
+    text-align: center;
+    width: 100%;
+  }
+  .button-container {
+    width: 100%;
+    @include dflex($g: 10px);
+    .btn-live-test {
+      @include button($bc: var(--sub-text-blue));
+      &:hover {
+        background-color: var(--sub-text-azure);
+        box-shadow: 0 0 10px #0000004d;
+      }
+    }
+    .btn-guthub {
+      @include button($bc: #ffffff00);
+      border: 1px solid var(--sub-text-azure);
+      &:hover{
+        background-color: var(--sub-text-azure);
+      }
+    }
+  }
+}
+
+.flex-rev{
+  flex-direction: row-reverse;
+}

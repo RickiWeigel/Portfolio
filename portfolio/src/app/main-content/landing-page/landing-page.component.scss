@@ -1,12 +1,10 @@
 @import "./../../../styles.scss";
 
 main {
-  display: flex;
-  justify-content: center;
-  position: relative;
   @include dflex();
+  position: relative;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
   height: calc(100vh - 80px);
   overflow: hidden;
 }
@@ -94,25 +92,7 @@ main {
   }
 }
 
-button {
-  cursor: pointer;
-  background-color: #00bee8;
-  border-radius: 10px;
-  border: none;
-  min-width: 133px;
-  height: 49px;
-  color: #fff;
-  padding: 15px;
-  font-size: 18px;
-  transition: all 125ms ease-in-out;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  &:hover {
-    background-color: var(--sub-text-blue);
-    transform: scale(1.05);
-    box-shadow: 0 0 10px #0000004d;
-  }
-}
+
 
 .social-media {
   display: flex;
@@ -141,7 +121,6 @@ button {
     align-items: center;
     padding: 0px 42px;
     gap: 42px;
-
     a {
       @include dflex();
       cursor: pointer;

@@ -2,9 +2,8 @@
 
 main {
   position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  @include dflex();
+  width: 100vw;
   height: calc(100vh - 80px);
   .backgroundlight-left {
     position: absolute;
@@ -21,7 +20,6 @@ main {
   width: 80vw;
   max-width: 1920px;
   display: flex;
-  margin-top: 100px;
   justify-content: space-between;
 }
 
