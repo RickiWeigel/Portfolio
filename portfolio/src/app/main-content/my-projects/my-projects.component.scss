@@ -6,7 +6,7 @@ main {
   @include dflex($jc: flex-start);
   flex-direction: column;
   width: 100vw;
-  height: calc(auto);
+  height: auto;
 }
 
 .headline {
@@ -43,12 +43,12 @@ main {
 
 .single-project {
   width: 100%;
-  @include dflex($jc: space-between);
+  @include dflex($g:10%);
   img {
     width: clamp(350px, 40vw, 390px);
   }
   .project-description {
-    @include dflex($jc: flex-start, $g: 1%);
+    @include dflex($jc: flex-start, $g: 5px);
     flex-direction: column;
     padding-top: 5%;
     height: 100%;

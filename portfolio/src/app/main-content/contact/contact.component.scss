@@ -1,0 +1,65 @@
+@import "./../../../styles.scss";
+
+main {
+  @include dflex($ai: flex-start);
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+}
+
+.contact-container {
+  @include dflex();
+  margin-top: 110px;
+  flex-direction: column;
+  width: 80vw;
+  max-width: 1920px;
+}
+
+.headline-container {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  @include dflex($jc: flex-start);
+  width: 100vw;
+  .line-container {
+    flex-grow: 1;
+    height: 4px;
+    border-radius: 3px;
+    .line {
+      height: 4px;
+      margin-right: 10%;
+      background-color: var(--sub-text-azure);
+    }
+  }
+  h2 {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1920px;
+    width: 80vw;
+  }
+  .space {
+    flex-grow: 1;
+  }
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  @include dflex($jc: space-between, $g: 15%);
+  .description {
+    display: flex;
+    max-width: 45%;
+    flex-direction: column;
+    gap: 12px;
+    p {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.form {
+  width: 100%;
+}
