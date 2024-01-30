@@ -63,6 +63,11 @@ main {
   }
 }
 
+a{
+  color: #fff;
+  text-decoration: none;
+}
+
 .line {
   position: absolute;
   left: clamp(150px, 25vw, 250px);

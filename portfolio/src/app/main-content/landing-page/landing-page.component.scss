@@ -9,6 +9,11 @@ main {
   overflow: hidden;
 }
 
+a{
+  color: #fff;
+  text-decoration: none;
+}
+
 .backgroundlight-left {
   position: absolute;
   top: 5vh;
@@ -95,11 +100,11 @@ main {
 
 
 .social-media {
-  display: flex;
   position: absolute;
   bottom: 50px;
   @include dflex($jc: flex-start);
   width: 100vw;
+  z-index: 3;
 }
 
 .line {

@@ -10,7 +10,7 @@ main {
 
 .contact-container {
   @include dflex();
-  margin-top: 110px;
+  margin-top: 180px;
   flex-direction: column;
   width: 80vw;
   max-width: 1920px;
@@ -47,7 +47,7 @@ main {
 .content {
   width: 100%;
   height: 100%;
-  @include dflex($jc: space-between, $g: 15%);
+  @include dflex($jc: space-between, $g: 15%, $ai: flex-start);
   .description {
     display: flex;
     max-width: 45%;

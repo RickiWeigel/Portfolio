@@ -1,12 +1,47 @@
-<form action="">
+<form action="" #myForm>
     <div class="input-area">
-        <input type="text" placeholder="Your name" required>
-        <span>Your name is required </span>
-    </div>
-    <div class="input-area">
-        <input type="email" placeholder="Your email" required>
-        <span>Your email is required </span>
+        <input #nameInput (keyup)="onKey($event, 'name')" type="text" placeholder="Your name" (focus)="setFocus('name')"
+            [class.border-green]="nameActive && nameValid" [class.border-red]="nameActive && !nameValid">
+        <img *ngIf="nameActive && !nameValid" class="icon" src="./../../../../assets/img/icons/error.png"
+            alt="icon-error">
+        <img *ngIf="nameActive && nameValid" class="icon" src="./../../../../assets/img/icons/correct.png"
+            alt="icon-correct">
+        <label [class.visible]="nameActive && !nameValid" class="hide">
+            {{errorMessage('nameInput')}}
+        </label>
     </div>
 
-    <button>test</button>
+    <div class="input-area">
+        <input #emailInput (keyup)="onKey($event, 'email')" type="text" placeholder="Your email"
+            (focus)="setFocus('email')" [class.border-green]="emailActive && emailValid"
+            [class.border-red]="emailActive && !emailValid">
+
+        <img *ngIf="emailActive && !emailValid" class="icon" src="./../../../../assets/img/icons/error.png"
+            alt="icon-error">
+        <img *ngIf="emailActive && emailValid" class="icon" src="./../../../../assets/img/icons/correct.png"
+            alt="icon-correct">
+        <label [class.visible]="emailActive && !emailValid" class="hide">
+            {{errorMessage('emailInput')}}
+        </label>
+    </div>
+
+    <div class="input-area">
+        <textarea #textarea type="text" placeholder="Your email" (keyup)="onKey($event, 'textarea')"
+            (focus)="setFocus('textarea')" [class.border-green]="textareaActive && textareaValid"
+            [class.border-red]="textareaActive && !textareaValid"></textarea>
+        <img *ngIf="textareaActive && !textareaValid" class="icon" src="./../../../../assets/img/icons/error.png"
+            alt="icon-error">
+        <img *ngIf="textareaActive && textareaValid" class="icon" src="./../../../../assets/img/icons/correct.png"
+            alt="icon-correct">
+        <label [class.visible]="textareaActive && !textareaValid" class="hide">
+            {{errorMessage('textareaInput')}}
+        </label>
+    </div>
+
+    <div class="agree-privacy-policy">
+        <input type="checkbox" id="agree-checkbox" (change)="onCheckboxChange($event)">
+        <span>I've read the <a href="">privacy policy </a> and agree to the processing of my data as outlined.</span>
+    </div>
+
+    <button [disabled]="!checkFormValid()" class="button-to-contact">Send message :)</button>
 </form>
