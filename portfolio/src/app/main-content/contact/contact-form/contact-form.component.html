@@ -12,7 +12,8 @@
     </div>
 
     <div class="input-area">
-        <input #emailInput (keyup)="onKey($event, 'email')" name="sender" type="text" placeholder="Your email"
+        <input #emailInput (keyup)="onKey($event, 'email')" name="sender
+        " type="text" placeholder="Your email"
             (focus)="setFocus('email')" [class.border-green]="emailActive && emailValid"
             [class.border-red]="emailActive && !emailValid">
 
