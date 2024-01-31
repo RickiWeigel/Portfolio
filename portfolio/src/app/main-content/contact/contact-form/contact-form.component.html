@@ -1,6 +1,6 @@
-<form action="" #myForm>
+<form action="https://w01ebc49.kasserver.com/ricki-weigel.com/send_mail/send_mail.php" #myForm method="post">
     <div class="input-area">
-        <input #nameInput (keyup)="onKey($event, 'name')" type="text" placeholder="Your name" (focus)="setFocus('name')"
+        <input #nameInput (keyup)="onKey($event, 'name')" name="name" type="text" placeholder="Your name" (focus)="setFocus('name')"
             [class.border-green]="nameActive && nameValid" [class.border-red]="nameActive && !nameValid">
         <img *ngIf="nameActive && !nameValid" class="icon" src="./../../../../assets/img/icons/error.png"
             alt="icon-error">
@@ -26,7 +26,7 @@
     </div>
 
     <div class="input-area">
-        <textarea #textarea type="text" placeholder="Your email" (keyup)="onKey($event, 'textarea')"
+        <textarea #textarea type="text" placeholder="Your email" name="message" (keyup)="onKey($event, 'textarea')"
             (focus)="setFocus('textarea')" [class.border-green]="textareaActive && textareaValid"
             [class.border-red]="textareaActive && !textareaValid"></textarea>
         <img *ngIf="textareaActive && !textareaValid" class="icon" src="./../../../../assets/img/icons/error.png"
