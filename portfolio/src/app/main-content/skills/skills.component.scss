@@ -21,16 +21,6 @@ main {
   }
 }
 
-.background-image-middle {
-  position: absolute;
-  width: 600px;
-  height: 400px;
-  top: -20%;
-  right: 15vw;
-  z-index: -1;
-  transform: rotateY(180deg) rotate(-50deg);
-}
-
 .skillbox {
   display: flex;
   gap: 80px;
@@ -63,7 +53,7 @@ main {
   }
 }
 
-a{
+a {
   color: #fff;
   text-decoration: none;
 }
