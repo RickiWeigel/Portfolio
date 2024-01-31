@@ -1,4 +1,4 @@
-<form action="https://w01ebc49.kasserver.com/ricki-weigel.com/send_mail/send_mail.php" #myForm method="post">
+<form action="https://ricki-weigel.com/send_mail/send_mail.php" #myForm method="post">
     <div class="input-area">
         <input #nameInput (keyup)="onKey($event, 'name')" name="name" type="text" placeholder="Your name" (focus)="setFocus('name')"
             [class.border-green]="nameActive && nameValid" [class.border-red]="nameActive && !nameValid">
@@ -12,7 +12,7 @@
     </div>
 
     <div class="input-area">
-        <input #emailInput (keyup)="onKey($event, 'email')" type="text" placeholder="Your email"
+        <input #emailInput (keyup)="onKey($event, 'email')" name="sender" type="text" placeholder="Your email"
             (focus)="setFocus('email')" [class.border-green]="emailActive && emailValid"
             [class.border-red]="emailActive && !emailValid">
 
