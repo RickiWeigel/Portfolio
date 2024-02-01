@@ -65,6 +65,10 @@ nav {
         &:focus {
             color: #00BEE8;
         }
+        &:visited{
+          color: #fff;
+          text-decoration: none;
+        }
       }
     }
   }

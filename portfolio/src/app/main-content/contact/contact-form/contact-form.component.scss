@@ -87,6 +87,12 @@ form {
   span {
     margin-left: 35px;
     font-size: 14px;
+    a{
+      color: var(--sub-text-azure);
+      &:visited{
+        color: var(--sub-text-azure);
+      }
+    }
   }
 }
 

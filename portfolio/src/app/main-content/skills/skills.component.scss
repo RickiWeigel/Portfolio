@@ -56,6 +56,10 @@ main {
 a {
   color: #fff;
   text-decoration: none;
+  &:visited{
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .line {

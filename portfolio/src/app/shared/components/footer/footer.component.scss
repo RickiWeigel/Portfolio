@@ -1,0 +1,48 @@
+@import "./../../../../styles.scss";
+
+main {
+  @include dflex();
+  width: 100vw;
+  height: 25vh;
+  overflow: hidden;
+  border-top: 4px solid var(--sub-text-azure);
+  flex-direction: column;
+  .footer-container {
+    @include dflex($jc: space-between);
+    width: 80vw;
+    max-width: 1920px;
+    .copyright{
+        font-size: 1.5rem;
+    }
+    .social-media {
+      display: flex;
+      align-items: center;
+      gap: 42px;
+      a {
+        @include dflex();
+        cursor: pointer;
+        transition: all 125ms ease-in-out;
+        border-radius: 50%;
+        img {
+          width: 30px;
+          height: 30px;
+          transition: all 125ms ease-in-out;
+          &:hover {
+            transform: scale(1.1);
+            --webkit-filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+            filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+          }
+        }
+      }
+    }
+  }
+  .imprint{
+    @include dflex($jc: flex-start);
+    width: 80vw;
+    max-width: 1920px;
+    a{
+        color: #fff;
+        text-decoration: none;
+      }
+  }
+}
