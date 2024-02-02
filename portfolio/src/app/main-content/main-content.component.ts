@@ -5,7 +5,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillsComponent } from './skills/skills.component';
 import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { ContactComponent } from './contact/contact.component';
-import { FormsModule } from '@angular/forms';
+import { BackgroundImagesComponent } from './background-images/background-images.component';
 
 @Component({
   selector: 'app-main-content',
@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
     SkillsComponent,
     MyProjectsComponent,
     ContactComponent,
-    FormsModule
+    BackgroundImagesComponent
   ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss',
