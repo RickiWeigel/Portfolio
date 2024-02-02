@@ -45,7 +45,24 @@ main {
     top: 40%;
     left: -15%;
     transform: rotate(0deg);
+  }
 
+  #bg-5{
+    position: absolute;
+    width: clamp(300px, 60vw, 500px);
+    top: 60%;
+    left: -25%;
+  }
+
+  #bg-6{
+    position: absolute;
+    width: clamp(300px, 60vw, 700px);
+    top: 62%;
+    right: -15%;
+    transform: rotate(90deg);
+    @media (max-width: 1000px) {
+        top: 72%;
+      }
   }
 
 #last {
