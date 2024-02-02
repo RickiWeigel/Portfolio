@@ -31,7 +31,8 @@ main {
     position: absolute;
     width: clamp(300px, 60vw, 900px);
     top: 20%;
-    transform: rotate(160deg);
+    transform: rotate(290deg);
+    opacity: 0.8;
     @media (max-width: 1000px) {
         transform: rotate(320deg);
         top: 30%;
