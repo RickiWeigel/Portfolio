@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-    --main-bg-color: #141d2f;
-    --main-txt-color: #ffffff;
-    --offset-header: 80px;
-    --sub-text-blue: #4b47ff;
-    --sub-text-azure: #00bee8;
-    --sub-blues-green: #1CE6B6;
+  --main-bg-color: #141d2f;
+  --main-txt-color: #ffffff;
+  --offset-header: 80px;
+  --sub-text-blue: #4b47ff;
+  --sub-text-azure: #00bee8;
+  --sub-blues-green: #1ce6b6;
 }
 
 * {
@@ -16,7 +16,7 @@
   user-select: none;
 }
 
-  @mixin dflex($jc: center, $ai: center, $g: 0px) {
+@mixin dflex($jc: center, $ai: center, $g: 0px) {
   display: flex;
   justify-content: $jc;
   align-items: $ai;
@@ -29,7 +29,7 @@
   background-position: $bp;
 }
 
-@mixin button($b: none, $bc:none){
+@mixin button($b: none, $bc: none) {
   cursor: pointer;
   border-radius: 10px;
   min-width: 133px;
@@ -54,31 +54,56 @@ body {
   overflow-x: hidden;
 }
 
-h1{
+h1 {
   font-weight: 700;
-  font-size: clamp(1.5rem, 7vw, 5.3rem);
+  font-size: clamp(2.5rem, 7vw, 5.3rem);
   margin: 0;
 }
 
-h2{
+h2 {
   font-weight: 700;
-  font-size: clamp(1.5rem, 6vw, 4.5rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   margin: 0;
 }
 
-section{
+section {
   width: 80vw;
   max-width: 1920px;
   margin: 0 auto;
 }
 
-
 .button-to-contact {
-  @include button($bc:var(--sub-text-azure));
+  @include button($bc: var(--sub-text-azure));
   margin: 5% 0;
   &:hover {
     background-color: var(--sub-text-blue);
     transform: scale(1.05);
     box-shadow: 0 0 10px #0000004d;
   }
+}
+
+.d-none {
+  display: none !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #07b6deff;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #07b6deff;
 }

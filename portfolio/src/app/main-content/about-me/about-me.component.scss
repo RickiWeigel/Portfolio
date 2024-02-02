@@ -4,7 +4,8 @@ main {
   position: relative;
   @include dflex();
   width: 100vw;
-  height: calc(100vh - 80px);
+  height: auto;
+  margin-top: 80px;
 }
 
 .content-container {
@@ -28,6 +29,7 @@ main {
   @include dflex($jc: space-between, $g: 20px);
   width: 80vw;
   max-width: 1920px;
+  margin-top: 60px;
   .description {
     width: 55%;
     display: flex;
@@ -35,12 +37,27 @@ main {
     gap: 20px;
     z-index: 3;
     font-size: clamp(0.8rem, 1vw, 1rem);
+
+    @media (max-width: 1000px) {
+      width: 100%;
+    }
+
     div {
       display: flex;
       gap: 5%;
       .description-icons {
         @include dflex();
       }
+    }
+  }
+  @media (max-width: 1000px) {
+    padding: 16px;
+    flex-direction: column-reverse;
+    gap: 80px;
+  }
+  @media (max-width: 450px) {
+    img {
+      width: 40px;
     }
   }
 }
@@ -59,6 +76,23 @@ main {
     width: 350px;
     height: auto;
   }
+
+  @media (max-width: 1200px) {
+    width: 300px;
+    height: 300px;
+    img {
+      width: 280px;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 450px) {
+    width: 250px;
+    height: 250px;
+    img {
+      width: 230px;
+    }
+  }
 }
 
 .line {
@@ -68,4 +102,7 @@ main {
   width: 500px;
   height: 2px;
   background-color: var(--sub-text-blue);
+  @media (max-width: 1000px) {
+    display: none;
+  }
 }

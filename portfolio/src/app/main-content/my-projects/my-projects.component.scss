@@ -7,13 +7,14 @@ main {
   flex-direction: column;
   width: 100vw;
   height: auto;
+  margin-top: 80px;
 }
 
 .headline {
   position: relative;
   width: 100%;
   @include dflex();
-  align-items: center; // Hinzugefügt, um die Ausrichtung auf das Zentrum zu setzen
+  align-items: center;
   h2 {
     margin: 0 32px;
   }
@@ -25,12 +26,32 @@ main {
     background-color: var(--sub-text-blue);
   }
   .left-line {
-    right: 67%;
+    right: 68%;
     width: 120px;
+    @media (max-width: 760px) {
+      width: 60px;
+    }
+
+    @media (max-width: 600px) {
+      width: clamp(30px, 8vw, 60px);
+      right: 80%
+    }
+
+    @media (max-width: 400px) {
+      right: 85%
+    }
+    
   }
   .right-line {
-    left: 67%;
+    left: 68%;
     width: 800px;
+    @media (max-width: 600px) {
+      left: 80%
+    }
+
+    @media (max-width: 400px) {
+      left: 85%
+    }
   }
 }
 
@@ -39,22 +60,42 @@ main {
   flex-direction: column;
   width: 80vw;
   max-width: 1920px;
+  p{
+    @include dflex();
+    margin-bottom: 24px;
+    text-align: center;
+  }
 }
 
 .single-project {
   width: 100%;
-  @include dflex($g:10%);
+  @include dflex($g: 10%);
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+
   img {
-    width: clamp(350px, 40vw, 390px);
+    width: clamp(250px, 50vw, 390px);
   }
   .project-description {
     @include dflex($jc: flex-start, $g: 5px);
     flex-direction: column;
     padding-top: 5%;
+    margin-top: -40px;
     height: 100%;
     max-width: 50%;
     min-width: 270px;
+    @media (max-width: 1000px) {
+      padding-top: 0;
+      padding-bottom: 5%;
+    }
+    @media (max-width: 450px) {
+      min-width: 100%;
+    }
   }
+
   .project-headline {
     font-size: 2rem;
     font-weight: 700;
@@ -86,21 +127,24 @@ main {
     .btn-guthub {
       @include button($bc: #ffffff00);
       border: 1px solid var(--sub-text-azure);
-      &:hover{
+      &:hover {
         background-color: var(--sub-text-azure);
       }
     }
   }
-  a{
+  a {
     color: #fff;
     text-decoration: none;
-    	&:visited{
-        color: #fff;
-        text-decoration: none;
-      }
+    &:visited {
+      color: #fff;
+      text-decoration: none;
+    }
   }
 }
 
-.flex-rev{
+.flex-rev {
   flex-direction: row-reverse;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
 }
