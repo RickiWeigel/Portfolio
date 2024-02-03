@@ -7,25 +7,34 @@ main {
   overflow: hidden;
   border-top: 4px solid var(--sub-text-azure);
   flex-direction: column;
+  padding: 25px 0;
+  @media (max-width: 1000px) {
+    justify-content: space-between;
+  }
 
   .footer-container {
-    padding-top: 25px;
     @include dflex($jc: space-between);
     width: 80vw;
     max-width: 1920px;
 
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
       flex-direction: column;
       gap: 20px;
     }
 
+    .logo {
+      @include dflex();
+      width: 180px;
+    }
+
     .copyright {
-      font-size: 1.5rem;
+      font-size: 1.1rem;
     }
     .social-media {
       display: flex;
       align-items: center;
       gap: 42px;
+      width: 180px;
       a {
         @include dflex();
         cursor: pointer;
@@ -49,14 +58,12 @@ main {
     width: 80vw;
     max-width: 1920px;
 
-    @media (max-width: 800px) {
-      margin-top: 20px;
+    @media (max-width: 1000px) {
       justify-content: center;
     }
 
     a {
       color: #fff;
-      text-decoration: none;
     }
   }
 }
