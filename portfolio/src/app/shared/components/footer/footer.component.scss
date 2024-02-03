@@ -23,8 +23,14 @@ main {
     }
 
     .logo {
-      @include dflex();
+      @include dflex($jc: flex-start);
       width: 180px;
+      @media (max-width: 1000px) {
+        justify-content: center;
+      }
+      img {
+        width: 75px;
+      }
     }
 
     .copyright {

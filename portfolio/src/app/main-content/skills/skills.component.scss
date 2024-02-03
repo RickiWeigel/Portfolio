@@ -82,6 +82,7 @@ main {
   width: 400px;
   overflow: visible;
     span{
+      display: flex;
       font-size: clamp(0.8rem, 1vw, 1rem);
       text-align: justify;
     }
