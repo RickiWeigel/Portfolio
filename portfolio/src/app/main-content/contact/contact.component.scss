@@ -100,13 +100,13 @@ main {
 
 #last {
   position: absolute;
-  top: -10%;
-  right: -20%;
+  top: -40%;
+  right: -40%;
   width: clamp(700px, 99vw, 1200px);
   transform: rotate(310deg);
   z-index: -1;
   @media (max-width: 1000px) {
-    top: -5%;
+    top: -20%;
   }
   @media (max-width: 800px) {
     top: 20%;
