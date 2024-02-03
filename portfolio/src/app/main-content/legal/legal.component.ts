@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './legal.component.scss'
 })
 export class LegalComponent {
+  scrollToTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
 
+  back(){
+    window.location.href = "";
+  }
 }

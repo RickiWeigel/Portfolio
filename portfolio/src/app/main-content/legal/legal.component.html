@@ -1,7 +1,7 @@
 <main>
     <div id="legal" class="header-box">
         <span class="header" translate>Legal notice and data protection</span>
-        <div class="back"><a href=""><img src="./../../../assets/img/icons/arrow.png" alt=""></a>
+        <div (click)="back()" class="back"><a><img src="./../../../assets/img/icons/arrow.png" alt=""></a>
             <span>zurück</span>
         </div>
         
@@ -413,5 +413,8 @@
         </p>
 
         <p>Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
+
+        
     </div>
+    <a class="arrow-up" (click)="scrollToTop()"><img src="./../../../assets/img/icons/arrow-up.png" alt="icon-arrow-up"></a>
 </main>
