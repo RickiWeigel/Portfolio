@@ -1,21 +1,28 @@
 import { CommonModule } from '@angular/common';
-import { Component} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss',
 })
 export class ContactFormComponent {
+  http = inject(HttpClient);
+
   privacyPoliceChecked: boolean = false;
+  formSubmitted: boolean = false;
+  buttonText: string = 'Nachricht senden';
+  emailSent: boolean = false;
 
   contactData = {
     name: '',
     email: '',
     message: '',
-  }
+  };
 
   nameInput: string = '';
   nameActive: boolean = false;
@@ -35,6 +42,39 @@ export class ContactFormComponent {
     '^[\\w!#$%&’*+/=?`{|}~^-]+(?:\\.[\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$'
   );
 
+  post = {
+    endPoint: 'https://ricki-weigel.com/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
+
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.submitted && this.checkValid()) {
+      this.http
+        .post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            // alles hinzufügen
+            ngForm.resetForm();
+            this.clearForm();
+            this.emailSent = false;
+            this.buttonText = 'Nachricht gesendet :)'
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => {
+            console.info('send post complete');
+          },
+        });
+    }
+  }
+
   onCheckboxChange(event: any) {
     if (event!.target.checked) {
       this.privacyPoliceChecked = true;
@@ -44,6 +84,7 @@ export class ContactFormComponent {
   }
 
   setFocus(inputfield: string) {
+    this.formSubmitted = false;
     if (inputfield == 'name') this.nameActive = true;
     if (inputfield == 'email') this.emailActive = true;
     if (inputfield == 'textarea') this.textareaActive = true;
@@ -62,7 +103,9 @@ export class ContactFormComponent {
   onKey(event: KeyboardEvent, inputfield: string) {
     if (inputfield == 'name') {
       this.contactData.name = (event.target as HTMLInputElement).value;
-      this.nameValid = this.checkInputNameOrTextareaValid(this.contactData.name);
+      this.nameValid = this.checkInputNameOrTextareaValid(
+        this.contactData.name
+      );
     }
     if (inputfield == 'email') {
       this.contactData.email = (event.target as HTMLInputElement).value;
@@ -70,7 +113,9 @@ export class ContactFormComponent {
     }
     if (inputfield == 'textarea') {
       this.contactData.message = (event.target as HTMLInputElement).value;
-      this.textareaValid = this.checkInputNameOrTextareaValid(this.contactData.message);
+      this.textareaValid = this.checkInputNameOrTextareaValid(
+        this.contactData.message
+      );
     }
   }
 
@@ -86,11 +131,53 @@ export class ContactFormComponent {
     this.emailValid = this.regex.test(this.contactData.email);
   }
 
-  checkFormValid() {
-    if (this.nameValid && this.emailValid && this.textareaValid && this.privacyPoliceChecked) {
+  checkValid() {
+    if (
+      this.nameValid &&
+      this.emailValid &&
+      this.textareaValid &&
+      this.privacyPoliceChecked &&
+      !this.emailSent
+    ) {
       return true;
     } else {
       return false;
     }
+  }
+
+  clearForm() {
+    this.privacyPoliceChecked = false;
+    let checkbox: HTMLElement | null | any =
+      document.getElementById('agree-checkbox');
+    if (checkbox) {
+      checkbox.checked = false;
+    }
+    this.removeBorderGreenFromAllInputs();
+    this.resetValidVar();
+    this.formSubmitted = true;
+  }
+
+  removeBorderGreenFromAllInputs() {
+    const inputIds = ['name', 'email', 'message'];
+    inputIds.forEach((inputId) => {
+      const element = document.getElementById(inputId);
+      if (element) {
+        element.classList.remove('border-green');
+      }
+    });
+  }
+
+  resetValidVar() {
+    this.nameActive = false;
+    this.nameValid = false;
+    this.emailActive = false;
+    this.emailValid = false;
+    this.textareaActive = false;
+    this.textareaValid = false;
+  }
+
+  emailSendBox() {
+    let dialog: HTMLDialogElement | null | any = document.querySelector('dialog');
+    dialog.showModal();
   }
 }

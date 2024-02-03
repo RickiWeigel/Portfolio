@@ -1,5 +1,6 @@
 @import "./../../../../styles.scss";
 
+
 form {
   @include dflex($jc: flex-start, $g: 12px);
   flex-direction: column;
@@ -161,9 +162,9 @@ input[type="checkbox"]:checked:after {
 
 .button-to-contact {
   &:disabled {
-    background-color: grey;
+    background-color: #74878b;
     &:hover {
-      background-color: grey;
+      background-color: #74878b;
       transform: scale(1);
     }
   }
