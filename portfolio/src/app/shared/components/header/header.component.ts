@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit {
-
-  navigationElements: any;
-  nav: any;
-  slider: any;
+  navigationElements: Element | null | any;
+  nav: Element | null | any;
+  slider: Element | null | any;
+  menuOpen: boolean = false;
 
   ngOnInit(): void {
     this.navigationElements = document.querySelectorAll('nav ul li');
@@ -35,9 +34,32 @@ export class HeaderComponent implements OnInit {
       setTimeout(() => {
         this.nav.classList.add('animate');
       }, 50);
-      
     });
   }
+
+  menu() {
+    if (!this.menuOpen) {
+      console.log(this.openMenu);
+      this.openMenu();
+      this.menuOpen = true;
+    } else {
+      console.log(this.openMenu);
+      this.closeMenu();
+      this.menuOpen = false;
+    }
+  }
+
+  openMenu() {
+    let doc: HTMLElement | null | any = document.getElementById('sidebarMenu');
+    doc.classList.remove('menuSlideOut');
+    doc.classList.add('menuSlideIn');
+
+  
+  }
+
+  closeMenu(){
+    let doc: HTMLElement | null | any = document.getElementById('sidebarMenu');
+    doc.classList.remove('menuSlideIn');
+    doc.classList.add('menuSlideOut');
+  }
 }
-
-
