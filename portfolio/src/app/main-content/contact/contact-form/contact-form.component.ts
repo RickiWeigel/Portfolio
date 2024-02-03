@@ -11,6 +11,12 @@ import { Component} from '@angular/core';
 export class ContactFormComponent {
   privacyPoliceChecked: boolean = false;
 
+  contactData = {
+    name: '',
+    email: '',
+    message: '',
+  }
+
   nameInput: string = '';
   nameActive: boolean = false;
   nameValid: boolean = false;
@@ -55,16 +61,16 @@ export class ContactFormComponent {
 
   onKey(event: KeyboardEvent, inputfield: string) {
     if (inputfield == 'name') {
-      this.nameInput = (event.target as HTMLInputElement).value;
-      this.nameValid = this.checkInputNameOrTextareaValid(this.nameInput);
+      this.contactData.name = (event.target as HTMLInputElement).value;
+      this.nameValid = this.checkInputNameOrTextareaValid(this.contactData.name);
     }
     if (inputfield == 'email') {
-      this.emailInput = (event.target as HTMLInputElement).value;
+      this.contactData.email = (event.target as HTMLInputElement).value;
       this.checkInputEmailValid();
     }
     if (inputfield == 'textarea') {
-      this.textareaInput = (event.target as HTMLInputElement).value;
-      this.textareaValid = this.checkInputNameOrTextareaValid(this.textareaInput);
+      this.contactData.message = (event.target as HTMLInputElement).value;
+      this.textareaValid = this.checkInputNameOrTextareaValid(this.contactData.message);
     }
   }
 
@@ -77,7 +83,7 @@ export class ContactFormComponent {
   }
 
   checkInputEmailValid() {
-    this.emailValid = this.regex.test(this.emailInput);
+    this.emailValid = this.regex.test(this.contactData.email);
   }
 
   checkFormValid() {
