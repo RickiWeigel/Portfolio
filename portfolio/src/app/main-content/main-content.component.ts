@@ -6,6 +6,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { BackgroundImagesComponent } from './background-images/background-images.component';
+import { LegalComponent } from './legal/legal.component';
 
 @Component({
   selector: 'app-main-content',
@@ -17,7 +18,8 @@ import { BackgroundImagesComponent } from './background-images/background-images
     SkillsComponent,
     MyProjectsComponent,
     ContactComponent,
-    BackgroundImagesComponent
+    BackgroundImagesComponent,
+    LegalComponent
   ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss',

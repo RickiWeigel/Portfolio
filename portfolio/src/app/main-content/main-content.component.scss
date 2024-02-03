@@ -9,7 +9,7 @@ main {
   overflow: hidden;
 }
 
-#background-images{
+#background-images {
   position: absolute;
   top: 0;
   left: 0;
@@ -18,9 +18,11 @@ main {
   z-index: 1;
 }
 
-#start, #about-me, #skills,#my-projects,#contact{
+#start,
+#about-me,
+#skills,
+#my-projects,
+#contact,
+#legal {
   z-index: 2;
 }
-
-
-
