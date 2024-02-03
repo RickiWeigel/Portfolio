@@ -31,22 +31,22 @@ main{
   .header-box {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     color: #ffffff;
     gap: 20px;
     padding: 120px 0 0 30px;
   
     @media (min-width: 768px) {
-      padding: 120px 0 0 80px;
+      padding: 120px 80px 0 80px;
     }
     @media (min-width: 1024px) {
-      padding: 120px 0 0 100px;
+      padding: 120px 100px 0 100px;
     }
     @media (min-width: 1200px) {
-      padding: 120px 0 0 130px;
+      padding: 120px 130px 0 130px;
     }
     @media (min-width: 1400px) {
-      padding: 120px 0 0 160px;
+      padding: 120px 160px 0 160px;
     }
   
     .header {
@@ -70,4 +70,29 @@ main{
 
   h3,h4,h5{
     margin: 20px 0;
+  }
+
+  .back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    img{
+        transform: rotate(90deg);
+    }
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        --webkit-filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+        filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+      }
+  }
+
+  a {
+    width: 25px;
+    height: 25px;
+    border: solid 1px #fff;
+    border-radius: 25px;
+    color: #fff;
+    text-decoration: none;
   }
