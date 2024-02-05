@@ -62,8 +62,7 @@ export class ContactFormComponent {
             // alles hinzufügen
             ngForm.resetForm();
             this.clearForm();
-            this.emailSent = false;
-            this.buttonText = 'Nachricht gesendet :)'
+            this.emailSentComplete();
           },
           error: (error) => {
             console.error(error);
@@ -176,8 +175,16 @@ export class ContactFormComponent {
     this.textareaValid = false;
   }
 
-  emailSendBox() {
-    let dialog: HTMLDialogElement | null | any = document.querySelector('dialog');
-    dialog.showModal();
+  emailSentComplete() {
+    this.emailSent = false;
+
+    const btn: Element | any = document.querySelector('.email');
+
+    btn.classList.add('email--loading');
+    setTimeout(() => {
+      btn.classList.remove('email--loading');
+      btn.classList.add('email-send');
+      this.buttonText = 'Nachricht gesendet :)';
+    }, 2000);
   }
 }

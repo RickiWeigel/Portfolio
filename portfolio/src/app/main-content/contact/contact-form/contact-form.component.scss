@@ -158,7 +158,7 @@ input[type="checkbox"]:checked:after {
   left: 7px;
 }
 
-.button-to-contact {
+.email {
   &:disabled {
     background-color: #74878b59;
     &:hover {
@@ -168,5 +168,53 @@ input[type="checkbox"]:checked:after {
   }
   &:hover {
     background-color: var(--sub-text-azure);
+  }
+}
+
+.email-send {
+  &:disabled {
+    background-color: green!important;
+    &:hover {
+      background-color: green!important;
+    }
+  }
+}
+
+.email {
+  position: relative;
+}
+
+.email__text {
+  transition: all 0.2s;
+}
+
+.email--loading .email__text {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.email--loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: email-loading-spinner 1s ease infinite;
+}
+
+@keyframes email-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { HeaderComponent } from '../shared/components/header/header.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AboutMeComponent } from './about-me/about-me.component';
@@ -25,4 +25,11 @@ import { LegalComponent } from './legal/legal.component';
   styleUrl: './main-content.component.scss',
 })
 export class MainContentComponent {
+  // Event-Handler für das Scrollen
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event): void {
+    const scrollY = window.scrollY; // Vertikale Scrollposition
+    console.log('Vertikale Scrollposition:', scrollY);
+    // Hier kannst du die Position weiterverarbeiten
+  }
 }
