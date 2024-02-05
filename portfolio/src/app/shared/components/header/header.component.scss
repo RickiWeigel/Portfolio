@@ -86,7 +86,6 @@ section {
   position: relative;
   display: none;
   z-index: 5;
-
   @media (max-width: 750px) {
     display: flex;
   }
@@ -115,7 +114,6 @@ section {
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 20px;
     cursor: pointer;
     border-bottom: 1px solid var(--sub-text-azure);
     border-radius: 5px;
@@ -134,11 +132,9 @@ section {
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
+    padding: 20px;
     text-decoration: none;
   }
-  // input[type="checkbox"]:checked ~ #sidebarMenu {
-  //   transform: translateX(0);                 // ###########################################################################################
-  // }
 
   input[type="checkbox"] {
     transition: all 0.3s;

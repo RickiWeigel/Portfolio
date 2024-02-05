@@ -9,11 +9,10 @@ main {
   overflow: hidden;
 }
 
-a{
+a {
   color: #fff;
   text-decoration: none;
 }
-
 
 .vector {
   width: 100%;
@@ -29,6 +28,7 @@ a{
   align-items: center;
   margin-bottom: 15vh;
   z-index: 3;
+  gap: 25px;
 }
 
 .headline {
@@ -69,7 +69,8 @@ a{
 }
 
 @keyframes text-animate {
-  0%, 100% {
+  0%,
+  100% {
     background-position: left top;
   }
   25% {
@@ -82,8 +83,6 @@ a{
     background-position: right top;
   }
 }
-
-
 
 .social-media {
   position: absolute;

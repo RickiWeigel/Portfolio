@@ -116,6 +116,7 @@ main {
   }
   .button-container {
     width: 100%;
+    margin: 5% 0;
     @include dflex($g: 10px);
     .btn-live-test {
       @include button($bc: var(--sub-text-blue));
