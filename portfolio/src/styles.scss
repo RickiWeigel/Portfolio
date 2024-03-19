@@ -33,14 +33,15 @@
   cursor: pointer;
   border-radius: 10px;
   min-width: 133px;
-  height: 49px;
+  height: auto;
   color: #fff;
-  padding: 15px;
+  padding: 13px 15px;
   font-size: 18px;
   transition: all 125ms ease-in-out;
   margin: 5% 0;
   border: $b;
   background-color: $bc;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -75,6 +76,7 @@ section {
 .button-to-contact {
   @include button($bc: var(--sub-text-azure));
   margin: 5% 0;
+  height: auto;
   &:hover {
     background-color: var(--sub-text-blue);
     transform: scale(1.05);

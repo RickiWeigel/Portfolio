@@ -44,7 +44,7 @@ section {
     }
   }
   .slider {
-    width: 5.5rem;
+    width: 5.9rem;
     height: 100%;
     border-bottom: solid 2px #4b47ff;
     position: absolute;
@@ -65,10 +65,10 @@ section {
         text-decoration: none;
         @include dflex();
         color: #ffffff;
-        font-size: 16px;
+        font-size: 18px;
         cursor: pointer;
         border-radius: 3rem;
-        width: 5.5rem;
+        width: 5.9rem;
         &:active,
         &:focus {
           color: #00bee8;

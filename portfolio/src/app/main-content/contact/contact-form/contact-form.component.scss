@@ -184,11 +184,12 @@ input[type="checkbox"]:checked:after {
   position: relative;
 }
 
-.email__text {
+.email_text {
+  font-family: "Poppins", sans-serif;
   transition: all 0.2s;
 }
 
-.email--loading .email__text {
+.email--loading .email_text {
   visibility: hidden;
   opacity: 0;
 }
