@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm" method="post">
+<form data-aos="fade-left" data-aos-duration="1700" (ngSubmit)="onSubmit(myForm)" #myForm="ngForm" method="post">
     <div class="input-area">
         <input #nameInput [(ngModel)]="contactData.name" (keyup)="onKey($event, 'name')" name="name" id="name"
             type="text" placeholder="Name" (focus)="setFocus('name')" [class.border-green]="nameActive && nameValid"
