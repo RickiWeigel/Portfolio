@@ -16,7 +16,9 @@ import 'aos/dist/aos.css';
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-    AOS.init();;
+    AOS.init({
+      duration: 1400,    
+    });
   }
   title = 'portfolio';
 }
