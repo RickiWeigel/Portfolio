@@ -22,9 +22,6 @@ main {
   flex-direction: column;
   max-width: 900px;
   text-align: justify;
-  @media (max-width: 1000px) {
-    text-align: center;
-  }
 }
 
 .description-container {
